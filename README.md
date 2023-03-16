@@ -1,32 +1,31 @@
-# A Dynamic Multi-Scale Voxel Flow Network for Video Prediction
+# A Dynamic Multi-Scale Voxel Flow Network for Video Prediction (MegEngine implementation)
 ## Introduction
-This project is the implement of [A Dynamic Multi-Scale Voxel Flow Network for Video Prediction](https://arxiv.org/abs/).
+This project is an official MegEngine implementation of A Dynamic Multi-Scale Voxel Flow Network for Video Prediction.
 **Our paper is accepted by CVPR2023.**
-[论文中文介绍](https://zhuanlan.zhihu.com/p/)
 ## Usage
 ### Installation
 
 ```
-git clone https://github.com/huxiaotaostasy/DMVFN.git
-cd 
+git clone https://github.com/MegEngine/MegEngine-DMVFN.git
+cd MegEngine-DMVFN
 pip3 install -r requirements.txt
 ```
 
-* Download the pretrained models from [Google Drive](). (百度网盘链接: 密码:，把压缩包解开后放在 pretrained_models/\*)
+* Download the pretrained models from [Google Drive](https://drive.google.com/file/d/1hX_J-KsbW2R-um9eEEsgeN1C5Atdan7_/view?usp=sharing).
 
 * Unzip and move the pretrained parameters to pretrained_models/\*
 
+### Installation
+Downloads [Cityscapes](https://www.cityscapes-dataset.com/downloads/) and [KITTI](https://www.cvlibs.net/datasets/kitti/raw_data.php).
 ### Run
 
 **Train**
 ```
-python3 -m torch.distributed.launch --nproc_per_node=8 --master_port=4321 train.py --train_dataset CityTrainDataset --val_datasets CityValDataset --batch_size 8 --num_gpu 8
+python3 train_city_vgg.py --train_dataset CityTrainDataset --val_datasets CityValDataset --batch_size 8 --num_gpu 8
 ```
 
 **Test**
+Download [CityValidation](https://drive.google.com/file/d/10zCt-uZFOqgF3tpdhluRqbs-4aScvGR4/view?usp=sharing)
 ```
-python3 -m torch.distributed.launch --nproc_per_node=1 --master_port=4321 test.py --val_datasets CityValDataset --load_path /data/dmvfn/train_log_CityTrainDataset/DMVFN/dmvfn_299.pkl
+python3  test.py --val_datasets CityValDataset --load_path ./pretrained_models/dmvfn_133.pkl
 ```
-
-**Results**
-

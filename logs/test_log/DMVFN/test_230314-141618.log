@@ -1,5 +1,0 @@
-23-03-14 14:19:21.773 - INFO: 0             CityValDataset  psnr_0     22.4442  ssim_0     0.7167  lpips_0     0.1432
-23-03-14 14:19:21.774 - INFO: 0             CityValDataset  psnr_1     21.4329  ssim_1     0.6921  lpips_1     0.1858
-23-03-14 14:19:21.774 - INFO: 0             CityValDataset  psnr_2     20.7709  ssim_2     0.6768  lpips_2     0.2201
-23-03-14 14:19:21.774 - INFO: 0             CityValDataset  psnr_3     20.2914  ssim_3     0.6664  lpips_3     0.2483
-23-03-14 14:19:21.774 - INFO: 0             CityValDataset  psnr_4     19.9195  ssim_4     0.6586  lpips_4     0.2722
